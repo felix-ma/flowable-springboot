@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/flowable
+    username: postgres
+    password: postgres
+
+logging:
+  level:
+    root: info
+    com.felix: debug
+  path: logs/
+  file: flowable.log
+
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath:mapper/*/*Mapper.xml
+  global-config:
+    refresh-mapper: true
+    db-config:
+      table-underline: true
+      id-type: auto
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

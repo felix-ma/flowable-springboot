@@ -1,4 +1,4 @@
-package com.haiyang.flowablespringboot;
+package com.felix.flowablespringboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * FlowableSpringbootApplication
  *
- * @author puhaiyang
- * @date 2018/12/19
+ * @author Felix
+ * @date 2019/5/8
  */
 @SpringBootApplication
 public class FlowableSpringbootApplication {
