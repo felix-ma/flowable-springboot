@@ -2,11 +2,7 @@
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.activiti.org/test" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.w3.org/1999/XPath" id="m1557284591881" name="" targetNamespace="http://www.activiti.org/test" typeLanguage="http://www.w3.org/2001/XMLSchema">
   <process id="baoxiao" isClosed="false" isExecutable="true" processType="None">
     <startEvent id="start" name="开始"/>
-    <userTask activiti:assignee="person" activiti:exclusive="true" id="_3" name="出差报销">
-      <extensionElements>
-        <activiti:taskListener event="assignment"/>
-      </extensionElements>
-    </userTask>
+    <userTask activiti:assignee="person" activiti:exclusive="true" id="_3" name="出差报销"/>
     <exclusiveGateway gatewayDirection="Unspecified" id="judgeTask" name="判断金额"/>
     <userTask activiti:assignee="boss" activiti:exclusive="true" id="bossTask" name="老板审批"/>
     <userTask activiti:assignee="director" activiti:exclusive="true" id="directorTak" name="经理审批"/>
@@ -85,7 +81,7 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="_15" id="BPMNEdge__15" sourceElement="directorTak" targetElement="_3">
-        <omgdi:waypoint x="581.0" y="323.0"/>
+        <omgdi:waypoint x="566.0" y="323.0"/>
         <omgdi:waypoint x="590.0" y="400.0"/>
         <omgdi:waypoint x="243.0" y="120.0"/>
         <bpmndi:BPMNLabel>
@@ -93,7 +89,7 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="_14" id="BPMNEdge__14" sourceElement="bossTask" targetElement="_3">
-        <omgdi:waypoint x="35.0" y="261.0"/>
+        <omgdi:waypoint x="35.0" y="276.0"/>
         <omgdi:waypoint x="35.0" y="155.0"/>
         <omgdi:waypoint x="158.0" y="120.0"/>
         <bpmndi:BPMNLabel>
