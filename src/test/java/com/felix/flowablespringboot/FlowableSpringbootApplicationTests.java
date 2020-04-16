@@ -19,5 +19,10 @@ public class FlowableSpringbootApplicationTests {
         taskService.complete("10003");
     }
 
+    @Test
+    public void doAllTask(){
+
+    }
+
 }
 
