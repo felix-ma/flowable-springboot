@@ -14,6 +14,7 @@ import org.flowable.ui.modeler.domain.AbstractModel;
 import org.flowable.ui.modeler.domain.Model;
 import org.flowable.ui.modeler.serviceapi.ModelService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -40,6 +41,7 @@ public class ExpenseController {
     private TaskService taskService;
     @Autowired
     private RepositoryService repositoryService;
+    @Qualifier("processEngine")
     @Autowired
     private ProcessEngine processEngine;
 
@@ -91,9 +93,22 @@ public class ExpenseController {
 
 
     @GetMapping("listDeploy")
-    public List<ProcessDefinition> listDeploy() {
+    public List listDeploy() {
         List<ProcessDefinition> list = repositoryService.createProcessDefinitionQuery().list();
-        return list;
+        ArrayList<HashMap<String, Object>> result = new ArrayList<>();
+
+        list.forEach(processDefinition -> {
+            HashMap<String, Object> item = new HashMap<>();
+            item.put("id", processDefinition.getId());
+            item.put("name", processDefinition.getName());
+            item.put("version", processDefinition.getVersion());
+            item.put("category", processDefinition.getCategory());
+            item.put("deploymentId", processDefinition.getDeploymentId());
+            item.put("resourceName", processDefinition.getResourceName());
+            result.add(item);
+        });
+
+        return result;
     }
 
     @GetMapping(value = "/listModels")
