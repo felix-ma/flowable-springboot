@@ -138,7 +138,7 @@ public class ExpenseController {
     public String complete(String taskId) {
         Task task = taskService.createTaskQuery().taskId(taskId).singleResult();
         if (task == null) {
-            throw new RuntimeException("流程不存在");
+            return "no task find!!";
         }
         //通过审核
         HashMap<String, Object> map = new HashMap<>();

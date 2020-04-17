@@ -29,6 +29,7 @@ public class Consumer {
                                                             ConsumeConcurrentlyContext context) {
                 System.out.printf("%s Receive New Messages: %s %n", Thread.currentThread().getName(), msgs);
                 for (MessageExt msg : msgs) {
+                    // 拟定发送taskId
                     System.out.println(new String(msg.getBody()));
                 }
                 return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
